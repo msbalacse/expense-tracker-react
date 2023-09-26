@@ -1,0 +1,5 @@
+@tailwind components;
+
+#nav {
+  @apply flex justify-between w-full bg-gray-500;
+}
