@@ -1,5 +1,9 @@
 @tailwind components;
 
 #nav {
-  @apply flex justify-between w-full bg-gray-500;
+  @apply flex items-center justify-between w-full p-4 bg-primary;
+}
+
+.logo img {
+  @apply w-8;
 }

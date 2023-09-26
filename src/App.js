@@ -4,8 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <div className="font-bold text-center underline">
-      Expense Tracker
+    <div className="font-bold text-center">
       <Navbar />
       <Home />
     </div>
