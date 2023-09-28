@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  const balance = useSelector((state) => state.store.balance);
-  useEffect(() => {}, [balance]);
-  return (
-    <div>
-      Home
-      <p>value {balance}</p>
-    </div>
-  );
+  const balance = useSelector((state) => state.expense.balance);
+  return <div>Home</div>;
 };
 
 export default Home;

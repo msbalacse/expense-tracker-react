@@ -2,13 +2,17 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import Expense from "..//../assets/expenses.png";
-import { addIncome } from "../../store/store";
+import { addIncome } from "../../store/expenseReducer";
 import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
-  const balance = useSelector((state) => state.store.balance);
+  const balance = useSelector((state) => state.expense.income);
+
+  console.log(balance);
 
   const dispatch = useDispatch();
+
+  console.log(balance);
 
   return (
     <nav id="nav">
