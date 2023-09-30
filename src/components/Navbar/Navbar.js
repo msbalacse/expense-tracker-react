@@ -6,7 +6,7 @@ import { addIncome } from "../../store/expenseReducer";
 import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
-  const balance = useSelector((state) => state.expense.income);
+  const balance = useSelector((state) => state.expense.balance);
 
   console.log(balance);
 
@@ -24,9 +24,6 @@ const Navbar = () => {
       </ul>
       <div className="profile">
         <p>profile</p>
-        <p>
-          <button onClick={() => dispatch(addIncome(5))}>increase 5$</button>
-        </p>
       </div>
     </nav>
   );

@@ -1,30 +1,34 @@
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addIncome } from "../../store/expenseReducer";
+import { addMoney } from "../../store/expenseReducer";
 
 const AddIncome = () => {
   const dispatch = useDispatch();
-  const [value, setValue] = useState(null);
+  const [value, setValue] = useState(0);
+  const [reason, setReason] = useState(null);
   const valueRef = useRef();
+
+  const handleSubmit = () => {
+    dispatch(addMoney({ value, reason }));
+  };
 
   return (
     <div>
       <from>
-        <input
-          type="number"
-          className="border"
-          ref={valueRef}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <button
-          onClick={() => {
-            dispatch(addIncome(parseInt(value)));
-            console.log(valueRef);
-            valueRef.current.value = null;
-          }}
-        >
-          Sumbit
-        </button>
+        <div className="input__control">
+          <label htmlFor="amount">Amount</label>
+          <input
+            type="number"
+            className="border"
+            ref={valueRef}
+            onChange={(e) => setValue(e.target.value)}
+          />
+        </div>
+        <div className="input__control">
+          <label htmlFor="reason">Why?</label>
+          <input type="text" onChange={(e) => setReason(e.target.value)} />
+        </div>
+        <input type="submit" onClick={handleSubmit} />
       </from>
     </div>
   );

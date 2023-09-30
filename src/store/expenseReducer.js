@@ -9,13 +9,15 @@ const expenceSlice = createSlice({
   name: "expense",
   initialState,
   reducers: {
-    addIncome: (state, action) => {
-      state.income += action.payload;
-      console.log(state.income);
+    addMoney: (state, action) => {
+      const { value, reason } = action.payload;
+      state.balance += parseInt(value);
+      console.log(value);
+      console.log(reason);
     },
   },
 });
 
-export const { addIncome } = expenceSlice.actions;
+export const { addMoney } = expenceSlice.actions;
 
 export default expenceSlice.reducer;
