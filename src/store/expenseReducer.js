@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
+import { useEffect } from "react";
 const initialState = {
   balance: 0,
   income: 0,
