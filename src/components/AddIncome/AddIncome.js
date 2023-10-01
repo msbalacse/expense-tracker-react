@@ -16,10 +16,12 @@ const AddIncome = () => {
     <div>
       <from>
         <div className="input__control">
-          <label htmlFor="amount">Amount</label>
+          <label htmlFor="amount" className="font-f3Secuenicia">
+            Amount
+          </label>
           <input
             type="number"
-            className="border"
+            className="border font-f3Secuenicia"
             ref={valueRef}
             onChange={(e) => setValue(e.target.value)}
           />

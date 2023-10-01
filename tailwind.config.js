@@ -9,6 +9,9 @@ module.exports = {
       text: "var(--text)",
       background: "var(--background)",
     },
+    fontFamily: {
+      f3Secuenicia: ["f3Secuenicia"],
+    },
   },
   plugins: [],
 };
