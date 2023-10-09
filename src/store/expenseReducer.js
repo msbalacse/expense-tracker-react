@@ -1,14 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../firebase";
-import { useEffect } from "react";
+import { createSlice } from '@reduxjs/toolkit';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../firebase';
 const initialState = {
   balance: 0,
   income: 0,
 };
 
 const expenceSlice = createSlice({
-  name: "expense",
+  name: 'expense',
   initialState,
   reducers: {
     addMoney: (state, action) => {
@@ -17,11 +16,11 @@ const expenceSlice = createSlice({
       console.log(value);
       console.log(reason);
       try {
-        addDoc(collection(db, "addData"), { value, reason }).then(() => {
-          console.log("data uploaded successfully");
+        addDoc(collection(db, 'addData'), { value, reason }).then(() => {
+          console.log('data uploaded successfully');
         });
       } catch (error) {
-        console.error("Error uploading data:", error);
+        console.error('Error uploading data:', error);
       }
     },
   },
