@@ -3,14 +3,23 @@ import Home from './Pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { loginUser, logoutUser } from './store/authActions';
+import { loginUser, logoutUser, signInuser } from './store/authActions';
+import { useEffect } from 'react';
 
 function App() {
   const user = useSelector((state) => state.auth.user);
+  console.log(user);
   const dispatch = useDispatch();
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
+  const handleSignIn = () => {
+    dispatch(loginUser('msbalacse@gmail.com', 'password'));
+  };
 
   const handleLogin = () => {
-    dispatch(loginUser('msbalacse@gmail.com', 'password'));
+    dispatch(signInuser('msbalacse@gmail.com', 'password'));
   };
 
   const handleLogout = () => {
@@ -27,6 +36,7 @@ function App() {
       ) : (
         <>
           <p>Please login</p>
+          <button onClick={handleSignIn}>Signin</button>
           <button onClick={handleLogin}>Login</button>
         </>
       )}
