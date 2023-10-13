@@ -4,22 +4,26 @@ import Navbar from './components/Navbar/Navbar';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { loginUser, logoutUser, signInuser } from './store/authActions';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [toggle, setToggle] = useState(false);
+
   const user = useSelector((state) => state.auth.user);
+  const isUser = useSelector((state) => state.auth.isUser);
+  const data = useSelector((state) => state.auth.value);
   console.log(user);
+  console.log(isUser);
+  console.log(data);
   const dispatch = useDispatch();
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
 
   const handleSignIn = () => {
-    dispatch(loginUser('msbalacse@gmail.com', 'password'));
+    dispatch(signInuser('msbalacse@gmail.com', 'password'));
   };
 
   const handleLogin = () => {
-    dispatch(signInuser('msbalacse@gmail.com', 'password'));
+    dispatch(loginUser('msbalacse@gmail.com', 'password'));
+    setToggle(true);
   };
 
   const handleLogout = () => {
@@ -28,7 +32,7 @@ function App() {
 
   return (
     <div>
-      {user ? (
+      {toggle ? (
         <div className="font-bold text-center">
           <Navbar />
           <Home />
@@ -38,6 +42,7 @@ function App() {
           <p>Please login</p>
           <button onClick={handleSignIn}>Signin</button>
           <button onClick={handleLogin}>Login</button>
+          <p>{data}</p>
         </>
       )}
     </div>

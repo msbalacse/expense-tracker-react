@@ -18,7 +18,7 @@ export const loginUser = (email, password) => async (dispatch) => {
     const user = auth.currentUser;
     console.log(user);
     setUser(user);
-    setUser({ one: 'email', two: 'password' });
+    isUser();
   } catch (error) {
     // Handle login error.
     console.log(error);
