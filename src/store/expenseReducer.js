@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 const initialState = {
   balance: 0,

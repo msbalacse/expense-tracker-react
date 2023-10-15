@@ -12,12 +12,12 @@ const auth = getAuth();
 export const loginUser = (email, password) => async (dispatch) => {
   try {
     console.log(email, password);
-    await signInWithEmailAndPassword(auth, email, password).then(() =>
-      console.log('Account has logined successfully')
-    );
-    const user = auth.currentUser;
-    console.log(user);
-    setUser(user);
+    await signInWithEmailAndPassword(auth, email, password).then(() => {
+      console.log('Account has logined successfully');
+      console.log(auth.currentUser);
+      dispatch(setUser(auth.currentUser));
+      console.log('setuser has called');
+    });
     isUser();
   } catch (error) {
     // Handle login error.

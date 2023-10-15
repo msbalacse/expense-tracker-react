@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 const Navbar = () => {
   const balance = useSelector((state) => state.expense.balance);
-
+  const currentUser = useSelector((state) => state.auth.user);
   console.log(balance);
 
   return (
@@ -20,6 +20,7 @@ const Navbar = () => {
       </ul>
       <div className="profile">
         <p>profile</p>
+        <p>{currentUser?.email}</p>
       </div>
     </nav>
   );

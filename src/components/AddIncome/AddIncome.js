@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { addMoney } from "../../store/expenseReducer";
+import React, { useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMoney } from '../../store/expenseReducer';
 
 const AddIncome = () => {
   const dispatch = useDispatch();
@@ -8,10 +8,12 @@ const AddIncome = () => {
   const [reason, setReason] = useState(null);
   const valueRef = useRef();
 
+  const user = useSelector((state) => state.auth.user);
+
   const handleSubmit = () => {
     dispatch(addMoney({ value, reason }));
   };
-
+  console.log(user);
   return (
     <div>
       <from>
