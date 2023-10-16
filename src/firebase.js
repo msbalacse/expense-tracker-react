@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import {
   getAuth,
   createUserWithEmailAndPassword,
-  updateProfile,
+  updateProfile,  
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,

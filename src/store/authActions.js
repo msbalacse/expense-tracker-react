@@ -6,6 +6,7 @@ import {
   signOut,
   createUserWithEmailAndPassword,
 } from 'firebase/auth';
+import Cookies from 'js-cookie';
 
 const auth = getAuth();
 
@@ -16,11 +17,11 @@ export const loginUser = (email, password) => async (dispatch) => {
       console.log('Account has logined successfully');
       console.log(auth.currentUser);
       dispatch(setUser(auth.currentUser));
+      Cookies.set('userExist', auth.currentUser.email);
       console.log('setuser has called');
     });
     isUser();
   } catch (error) {
-    // Handle login error.
     console.log(error);
   }
 };
@@ -28,6 +29,7 @@ export const loginUser = (email, password) => async (dispatch) => {
 export const logoutUser = () => async (dispatch) => {
   await signOut(auth);
   dispatch(clearUser());
+  Cookies.set('userExist', false);
 };
 
 export const signInuser = (email, password) => async (dispatch) => {

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginUser, logoutUser, signInuser } from './store/authActions';
 import { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -15,6 +16,9 @@ function App() {
   console.log(user);
   console.log(isUser);
   console.log(data);
+
+  const userExist = Cookies.get('user');
+  console.log(userExist);
 
   const dispatch = useDispatch();
 
@@ -33,18 +37,18 @@ function App() {
 
   return (
     <div>
-      {toggle ? (
+      {userExist ? (
         <div className="font-bold text-center">
           <Navbar />
           <Home />
         </div>
       ) : (
-        <>
-          <p>Please login</p>
+        <div className="flex justify-center h-screen items-center flex-col gap-2">
+          <p>New user ??</p>
           <button onClick={handleSignIn}>Signin</button>
           <button onClick={handleLogin}>Login</button>
           <p>{data}</p>
-        </>
+        </div>
       )}
     </div>
   );
