@@ -1,26 +1,29 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import Expense from '..//../assets/expenses.png';
 import { addIncome } from '../../store/expenseReducer';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.auth.user);
   const balance = useSelector((state) => state.expense.balance);
-  const currentUser = useSelector((state) => state.auth.user);
-  console.log(balance);
+  console.log(user);
 
   return (
     <nav id="nav">
-      <div className="logo">
+      <NavLink to="/" className="logo">
         <img src={Expense} alt="expense logo" />
-      </div>
+      </NavLink>
       <ul>
         <li>Balance : ${balance}</li>
       </ul>
+      <Link to="/addIncome">Add Income</Link>
       <div className="profile">
         <p>profile</p>
-        <p>{currentUser?.email}</p>
+        <p>{user?.email}</p>
       </div>
     </nav>
   );

@@ -7,21 +7,12 @@ const Dashboard = () => {
   const userName = useRef();
   const dispatch = useDispatch();
 
-  const handleSetName = (e) => {
-    e.preventDefault();
-    console.log(userName.current.value);
-    console.log('--------------------------------');
-    dispatch(setUser(userName.current.value));
-    console.log(userValue);
-    userName.current.value = '';
-  };
-
   return (
     <div>
       Dashboard
       <form>
         <input type="text" ref={userName} />
-        <button onClick={handleSetName}>set name</button>
+        <button className="bg-primary p-4 w-16">set name</button>
       </form>
     </div>
   );

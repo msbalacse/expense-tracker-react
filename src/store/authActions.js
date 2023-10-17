@@ -17,10 +17,10 @@ export const loginUser = (email, password) => async (dispatch) => {
       console.log('Account has logined successfully');
       console.log(auth.currentUser);
       dispatch(setUser(auth.currentUser));
-      Cookies.set('userExist', auth.currentUser.email);
+      Cookies.set('userExist', true);
+      console.log(Cookies.get('userExist'));
       console.log('setuser has called');
     });
-    isUser();
   } catch (error) {
     console.log(error);
   }

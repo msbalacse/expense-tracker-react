@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: { user: null, isUser: false, value: 'Balamurugan' },
+  initialState: { user: null, value: 'Balamurugan' },
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload;
@@ -10,9 +10,6 @@ const authSlice = createSlice({
     },
     clearUser: (state) => {
       state.user = null;
-    },
-    isUser: (state) => {
-      state.isUser = true;
     },
     setValue: (state, action) => {
       state.value = action.payload;
