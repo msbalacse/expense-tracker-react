@@ -4,14 +4,14 @@
 
 @font-face {
   font-family: f3Secuenicia;
-  src: url("./assets/fonts/f3Secuencia/f3-Secuencia-round-regular.ttf");
+  src: url('./assets/fonts/f3Secuencia/f3-Secuencia-round-regular.ttf');
 }
 
 :root {
   --primary-color: #d2de32;
   --secondary-color: #016a70;
   --text: #a2c579;
-  --background: #ffffdd;
+  --background: #15181e;
 }
 
 body {

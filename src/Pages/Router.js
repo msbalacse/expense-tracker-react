@@ -6,13 +6,17 @@ import Navbar from '../components/Navbar/Navbar';
 
 const MainRouter = () => {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/addIncome" element={<AddIncome />} />
-      </Routes>
-    </Router>
+    <div className="grid h-screen grid-cols-4">
+      <Router>
+        <Navbar />
+        <div className="col-span-3">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/addIncome" element={<AddIncome />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
   );
 };
 
