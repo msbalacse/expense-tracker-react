@@ -13,7 +13,7 @@ const Navbar = () => {
   console.log(user);
 
   return (
-    <nav id="nav" className="col-span-1">
+    <nav id="nav" className="absolute top-0 left-0 w-[200px] h-screen">
       <NavLink to="/" className="logo">
         <img src={Expense} alt="expense logo" />
       </NavLink>

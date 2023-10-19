@@ -6,10 +6,10 @@ import Navbar from '../components/Navbar/Navbar';
 
 const MainRouter = () => {
   return (
-    <div className="grid h-screen grid-cols-4">
+    <div className="relative p-4">
       <Router>
         <Navbar />
-        <div className="col-span-3">
+        <div className="ml-[200px] ">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/addIncome" element={<AddIncome />} />

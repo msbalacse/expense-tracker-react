@@ -21,11 +21,11 @@ function App() {
   return (
     <div>
       {user ? (
-        <div className="font-bold text-center">
+        <div className="font-bold">
           <MainRouter />
         </div>
       ) : (
-        <div className="flex justify-center h-screen items-center flex-col gap-2">
+        <div className="flex flex-col items-center justify-center h-screen gap-2">
           <p>New user ??</p>
           <button onClick={handleSignIn}>Signin</button>
           <button onClick={handleLogin}>Login</button>

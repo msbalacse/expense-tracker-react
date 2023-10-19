@@ -9,10 +9,12 @@ const Dashboard = () => {
 
   return (
     <div>
-      Dashboard
-      <form>
-        <input type="text" ref={userName} />
-        <button className="bg-primary p-4 w-16">set name</button>
+      <p className="py-8 text-secondary">Layout changed.</p>
+      <form className="flex flex-col gap-2">
+        <input type="text" ref={userName} className="w-40" />
+        <button className="w-16 text-sm font-normal bg-primary">
+          set name
+        </button>
       </form>
     </div>
   );
