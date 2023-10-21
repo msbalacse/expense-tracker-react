@@ -30,6 +30,7 @@ export const logoutUser = () => async (dispatch) => {
   await signOut(auth);
   dispatch(clearUser());
   Cookies.set('userExist', false);
+  console.log('dispatch');
 };
 
 export const signInuser = (email, password) => async (dispatch) => {
