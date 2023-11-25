@@ -5,7 +5,7 @@ import Expense from '..//../assets/expenses.png';
 
 const Navbar = () => {
   return (
-    <nav id="nav" className="absolute top-0 left-0 w-[200px] h-screen">
+    <nav id="nav" className="flex justify-between w-full p-4">
       <NavLink to="/" className="logo">
         <img src={Expense} alt="expense logo" />
       </NavLink>
