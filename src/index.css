@@ -53,7 +53,8 @@
 }
 
 :root {
-  --primary-color: #d2de32;
+  /* --primary-color: #d2de32; */
+  --primary-color: #52794c;
   --secondary-color: #016a70;
   --text: #a2c579;
   --background: #15181e;
@@ -61,7 +62,7 @@
 
 body {
   margin: 0;
-  background-color: var(--background);
+  background-color: white;
   min-height: 100vh;
-  color: white;
+  color: black;
 }
