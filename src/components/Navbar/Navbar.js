@@ -29,7 +29,6 @@ const Navbar = () => {
       <ul>
         <li>Balance : 0</li>
       </ul>
-      <Link to="/addIncome">Add Income</Link>
       <div className="profile">
         <button onClick={handleLogout}>Logout</button>
       </div>

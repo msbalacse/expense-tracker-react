@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="grid h-screen grid-cols-2 place-items-center">
       <div className="flex flex-col items-center justify-center gap-2">
-        <img src={ExpenseLogIn} alt="expense login png" className="w-[300px]" />
+        <img src={ExpenseLogIn} alt="expense login png" className="w-[200px]" />
         <h1 className="text-2xl uppercase text-primary font-SFProDisplayBold ">
           Expense Tracker
         </h1>
