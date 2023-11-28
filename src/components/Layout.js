@@ -6,13 +6,17 @@ import NotFoundPage from '../Pages/NotFoundPage';
 
 const Layout = () => {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </Router>
+    <div className="grid grid-cols-5 h-screen">
+      <Router>
+        <Navbar />
+        <div className="col-span-4">
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+      </Router>
+    </div>
   );
 };
 

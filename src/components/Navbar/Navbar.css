@@ -1,7 +1,7 @@
 @tailwind components;
 
 #nav {
-  @apply bg-primary font-SFProDisplayMedium;
+  @apply bg-primary font-SFProDisplayMedium flex flex-col justify-between;
 }
 
 .logo img {

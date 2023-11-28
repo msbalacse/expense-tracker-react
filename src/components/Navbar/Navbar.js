@@ -23,12 +23,6 @@ const Navbar = () => {
       <NavLink to="/" className="logo">
         <img src={Expense} alt="expense logo" />
       </NavLink>
-      <li>
-        <p>Email:</p> <p>{currentUser.email}</p>
-      </li>
-      <ul>
-        <li>Balance : 0</li>
-      </ul>
       <div className="profile">
         <button onClick={handleLogout}>Logout</button>
       </div>
