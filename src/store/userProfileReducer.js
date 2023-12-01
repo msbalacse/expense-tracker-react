@@ -8,6 +8,7 @@ import { db } from '../firebase';
 
 const initialState = {
   email: null,
+  userUUID: null,
   name: null,
   profilePicture: null,
 };
@@ -17,24 +18,26 @@ const userProfileSlice = createSlice({
   initialState,
   reducers: {
     addProfile: (state, action) => {
-      const { userUUID, userEmail, userName, userProfilePicture } =
-        action.payload;
+      const { userEmail, userName, userProfilePicture } = action.payload;
       state.email = userEmail;
       let name = state.name;
       console.log('function called');
 
+      let imageUrl = '';
       const storage = getStorage();
       const imageRef = StorageRef(storage, `/images/${userName}`);
       uploadBytes(imageRef, userProfilePicture)
         .then((snapshot) => {
           getDownloadURL(snapshot.ref)
-            .then((url) => console.log(url))
+            .then((url) => {
+              console.log(url);
+              imageRef = url;
+            })
             .catch((error) => console.log('download image url error' + error));
         })
         .catch((error) => console.log('download', error));
       try {
-        addDoc(collection(db, `users`, `${userUUID}`, `${userName}`), {
-          userUUID,
+        addDoc(collection(db, `${userEmail}`), {
           userEmail,
           userProfilePicture,
           userName,
